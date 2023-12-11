@@ -7,11 +7,16 @@ public:
             maxVal = max(maxVal, nums[i]);
             minVal = min(minVal, nums[i]);
         }
-        int res = minVal;
-        if(maxVal % res == 0)   return res;
-        for(int i = minVal; i>=1; i--){
-            if(minVal % i == 0 && maxVal % i == 0)    return i;
+        int res = 1;
+        if(maxVal % minVal == 0)   return minVal;
+        for(int i = 1; i<= sqrt(minVal); i++){
+            if(minVal%i != 0)   continue;
+            else{
+                int q = minVal/i;
+                if(maxVal % q == 0)     return q;
+                if(maxVal % i == 0)     res = max(res, i);
+            }
         }
-        return 1;
+        return res;
     }
 };
