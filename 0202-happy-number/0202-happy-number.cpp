@@ -1,25 +1,25 @@
 class Solution {
 public:
     bool isHappy(int n) {
-        set<int> visit;
-        while(visit.find(n) == visit.end()){
-            visit.insert(n);
-            n = sumOfSquare(n);
-            if(n == 1)     return true;
-            else    continue;
+        int slow = n;
+        int fast = getNext(n);
+        
+        while(slow != fast && fast != 1){
+            slow = getNext(slow);
+            fast = getNext(getNext(fast));
         }
-        return false;
+        if(fast == 1)   return true;
+        else    return false;
     }
-    private:
-    int sumOfSquare(int n){
+    int getNext(int n){
         int sq = 0;
-        int squar = 0;
+        int res = 0;
         while(n){
             int digit = n%10;
-            int square = digit*digit;
-            sq += square;
+            sq = digit * digit;
+            res += sq;
             n /= 10;
         }
-        return sq;
+        return res;
     }
 };
