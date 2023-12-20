@@ -8,7 +8,6 @@ public:
             arr[i] = maxNum;
             maxNum = max(maxNum, number);
         }
-        // reverse(arr.begin(), arr.end());
         return arr;
     }
 };
