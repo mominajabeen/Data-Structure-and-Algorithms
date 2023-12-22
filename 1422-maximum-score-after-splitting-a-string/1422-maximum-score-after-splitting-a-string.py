@@ -14,9 +14,9 @@ class Solution:
         left, right = s, s
 
         ans = 0
-        for i in range(0, len(s)-1):
-            left = s[:i+1]
-            right = s[i+1:]
+        for i in range(1, len(s)):
+            left = s[:i]
+            right = s[i:]
 
             counts1 = Counter(left)
             counts2 = Counter(right)
