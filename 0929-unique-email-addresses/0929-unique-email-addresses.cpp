@@ -1,9 +1,7 @@
 class Solution {
 public:
     int numUniqueEmails(vector<string>& emails) {
-        int res = 0;
         set<string> validemails;
-        bool flag = false;
         for(int i = 0; i < emails.size(); i++){
             string s = "";
             int x = 0;
