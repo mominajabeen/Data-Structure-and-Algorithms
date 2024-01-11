@@ -1,15 +1,12 @@
 class Solution {
 public:
     int minTimeToType(string word) {
-        int time = 0;
-        int temp = 0;
+        int time = word.size();
+        char x = 'a';
         for(auto ch:word){
-            time++;
-            int chr = ch - 'a';
-            int dis = abs(chr - temp);
-            if(dis < 13)    time += dis;
-            else    time += (26 - dis);
-            temp = chr;
+            int dis = abs(ch - x);
+            time += min(dis, 26-dis);
+            x = ch;
         }
         return time;
     }
