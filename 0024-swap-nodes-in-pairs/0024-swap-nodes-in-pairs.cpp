@@ -14,7 +14,6 @@ public:
         if(!head || !head->next)    return head;
         ListNode* dummyNode = new ListNode();
         ListNode* prevNode = dummyNode;
-        ListNode* currNode = head;
             while(head && head->next){
                 prevNode->next = head->next;
                 head->next = prevNode->next->next;
