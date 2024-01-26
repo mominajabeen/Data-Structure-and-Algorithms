@@ -14,7 +14,7 @@ public:
     int kthSmallest(TreeNode* root, int k) {
         stack<TreeNode*> stk;
         TreeNode* curr = root;
-        while(curr or !stk.empty()){
+        while(root or !stk.empty()){
             while(curr){
                 stk.push(curr);
                 curr = curr->left;
