@@ -16,7 +16,7 @@ public:
         while(j > 0 && nums[j] <= nums[i-1]) j--;
         
         swap(nums[j], nums[i-1]);
-        sort(nums.begin()+i, nums.end());
+        reverse(nums.begin()+i, nums.end());
         return true;
     }
 };
