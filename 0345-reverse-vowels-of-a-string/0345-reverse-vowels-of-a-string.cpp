@@ -1,23 +1,15 @@
 class Solution {
 public:
     string reverseVowels(string s) {
-        int low = 0;
-        int high = s.size()-1;
-        
-        while(low < high){
-            if((tolower(s[low]) == 'a' or tolower(s[low]) == 'e' or tolower(s[low]) == 'i' or tolower(s[low]) == 'o' or tolower(s[low]) == 'u')&&(tolower(s[high]) == 'a' or tolower(s[high]) == 'e' or tolower(s[high]) == 'i' or tolower(s[high]) == 'o' or tolower(s[high]) == 'u')){
-                swap(s[low],s[high]);
-                low++;
-                high--;
-            }
-            else if(tolower(s[low]) == 'a' or tolower(s[low]) == 'e' or tolower(s[low]) == 'i' or tolower(s[low]) == 'o' or tolower(s[low]) == 'u'){
-                high--;
-            }
-            else if(tolower(s[high]) == 'a' or tolower(s[high]) == 'e' or tolower(s[high]) == 'i' or tolower(s[high]) == 'o' or tolower(s[high]) == 'u') low++;
-            else{
-                low++;
-                high--;
-            }
+        int first = 0, last = s.size()-1;
+        string vowels = "aeiouAEIOU";
+        while(first<last){
+            while(first<last && vowels.find(s[first]) == -1)    first++;
+            while(first<last && vowels.find(s[last]) == -1)     last--;
+            
+            swap(s[first], s[last]);
+            first++;
+            last--;            
         }
         return s;
     }
