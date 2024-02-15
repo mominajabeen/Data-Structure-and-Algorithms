@@ -3,7 +3,7 @@ public:
     bool isHappy(int n) {
         int slow = n;
         int fast = findSquare(n);
-        while(slow != fast && fast != 1){
+        while(slow != fast){
             slow = findSquare(slow);
             fast = findSquare(findSquare(fast));
         }
