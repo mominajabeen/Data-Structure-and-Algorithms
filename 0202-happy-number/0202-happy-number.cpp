@@ -7,8 +7,7 @@ public:
             slow = findSquare(slow);
             fast = findSquare(findSquare(fast));
         }while(slow != fast);
-        if(slow == 1)   return true;
-        else return false;
+        return slow == 1;
     }
     private:
     int findSquare(int number){
