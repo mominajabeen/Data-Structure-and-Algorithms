@@ -2,12 +2,12 @@ class Solution {
 public:
     bool isHappy(int n) {
         int slow = n;
-        int fast = findSquare(n);
-        while(slow != fast){
+        int fast = (n);
+        do{
             slow = findSquare(slow);
             fast = findSquare(findSquare(fast));
-        }
-        if(fast == 1)   return true;
+        }while(slow != fast);
+        if(slow == 1)   return true;
         else return false;
     }
     private:
