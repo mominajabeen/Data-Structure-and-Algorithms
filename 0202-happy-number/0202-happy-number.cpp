@@ -12,14 +12,12 @@ public:
     }
     private:
     int findSquare(int number){
-        int res= 0;
         int square = 0;
         while(number){
             int digit = number%10;
             number /= 10;
-            square = (digit*digit);
-            res += square;
+            square += (digit*digit);
         }
-        return res;
+        return square;
     }
 };
