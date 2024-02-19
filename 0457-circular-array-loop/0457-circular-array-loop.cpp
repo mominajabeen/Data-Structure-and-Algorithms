@@ -1,10 +1,10 @@
 class Solution {
 public:
     bool circularArrayLoop(vector<int>& nums) {
-        
+        int slow = 0, fast = 0;
         for(int i = 0; i<nums.size(); i++){
             bool isForward = nums[i]>=0;
-            int slow = i, fast = i;
+             slow = i, fast = i;
             
             do{
                 slow = findNextInd(nums, isForward, slow);
