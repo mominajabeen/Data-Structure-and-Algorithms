@@ -6,7 +6,7 @@ public:
             map[c]++;
         }
         for(char c:ransomNote){
-            if(!map[c]){
+            if(map[c] == 0){
               return false;  
             }
             else{
